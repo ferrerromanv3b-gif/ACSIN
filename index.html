@@ -21,6 +21,40 @@
       <button id="login-btn">Entrar</button>
       <p id="login-error" class="error"></p>
     </div>
+    <!-- Contenido principal después del login -->
+<div id="main-content" class="hidden">
+
+  <!-- Menú de navegación -->
+  <nav class="menu">
+    <button onclick="mostrarSeccion('inicio')">Inicio</button>
+    <button onclick="mostrarSeccion('registro')">Registro de Participantes</button>
+    <button onclick="mostrarSeccion('capacitaciones')">Capacitaciones</button>
+    <button onclick="mostrarSeccion('diplomados')">Diplomados</button>
+  </nav>
+
+  <!-- Secciones -->
+  <div id="inicio" class="seccion">
+    <h2>Inicio</h2>
+    <p>Bienvenido, <span id="nombre-usuario"></span>!</p>
+  </div>
+
+  <div id="registro" class="seccion hidden">
+    <h2>Registro de Participantes</h2>
+    <p>Aquí podrás generar registros de participantes.</p>
+  </div>
+
+  <div id="capacitaciones" class="seccion hidden">
+    <h2>Capacitaciones</h2>
+    <p>Sección de capacitaciones (contenido pendiente).</p>
+  </div>
+
+  <div id="diplomados" class="seccion hidden">
+    <h2>Diplomados</h2>
+    <p>Sección de diplomados (contenido pendiente).</p>
+  </div>
+
+</div>
+
   </section>
 
   <!-- Sección de registro (oculta al inicio) -->
