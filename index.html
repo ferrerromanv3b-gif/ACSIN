@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A C E - STPS | Registro</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <header>
+    <img src="logo.jpg" alt="Logo ACSIN" class="logo" />
+    <h1>A C E - STPS</h1>
+  </header>
+
+  <!-- Sección de login -->
+  <section id="login-section">
+    <div class="login-box">
+      <h2>Acceso</h2>
+      <input type="text" id="username" placeholder="Nombre de usuario" />
+      <button id="login-btn">Entrar</button>
+      <p id="login-error" class="error"></p>
+    </div>
+  </section>
+
+  <!-- Sección de registro (oculta al inicio) -->
+  <section id="main-section" class="hidden">
+    <div class="form-box">
+      <h2>Registro de Participantes</h2>
+      <label>Nombre del participante</label>
+      <input type="text" id="nombre-participante" />
+
+      <label>Nombre del capacitador</label>
+      <input type="text" id="nombre-capacitador" />
+
+      <button id="registrar-btn">Generar Registro</button>
+    </div>
+
+    <div id="registro" class="hidden">
+      <h3>A C E - STPS</h3>
+      <p><strong>Participante:</strong> <span id="out-participante"></span></p>
+      <p><strong>Capacitador:</strong> <span id="out-capacitador"></span></p>
+      <div id="qrcode"></div>
+      <a href="https://www.gob.mx/stps" target="_blank" class="link-stps">
+        Consultar registro en STPS
+      </a>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
