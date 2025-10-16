@@ -1,86 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A C E - STPS | Registro</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Página</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
-  <header>
-    <img src="logo.jpg" alt="Logo ACSIN" class="logo" />
-    <h1>A C E - STPS</h1>
-  </header>
 
-  <!-- Sección de login -->
-  <section id="login-section">
-    <div class="login-box">
-      <h2>Acceso</h2>
-      <input type="text" id="username" placeholder="Nombre de usuario" />
-      <button id="login-btn">Entrar</button>
-      <p id="login-error" class="error"></p>
+<header>
+  <img src="logo.png" alt="Logo" class="logo">
+  <h1>Mi Página</h1>
+</header>
+
+<section>
+
+  <!-- LOGIN -->
+  <div class="login-box" id="login-section">
+    <h2>Iniciar Sesión</h2>
+    <input type="text" id="username" placeholder="Usuario">
+    <button id="login-btn">Entrar</button>
+    <p class="error hidden" id="login-error"></p>
+  </div>
+
+  <!-- MAIN CONTENT (oculto hasta login) -->
+  <div id="main-section" class="hidden">
+
+    <!-- Menú de navegación -->
+    <nav class="menu">
+      <button onclick="mostrarSeccion('inicio')">Inicio</button>
+      <button onclick="mostrarSeccion('registro')">Registro de Participantes</button>
+      <button onclick="mostrarSeccion('capacitaciones')">Capacitaciones</button>
+      <button onclick="mostrarSeccion('diplomados')">Diplomados</button>
+    </nav>
+
+    <!-- SECCIONES -->
+    <div id="inicio" class="seccion">
+      <h2>Inicio</h2>
+      <p>Bienvenido, <span id="nombre-usuario"></span>!</p>
     </div>
-    <!-- Contenido principal después del login -->
-<div id="main-content" class="hidden">
 
-  <!-- Menú de navegación -->
-  <nav class="menu">
-    <button onclick="mostrarSeccion('inicio')">Inicio</button>
-    <button onclick="mostrarSeccion('registro')">Registro de Participantes</button>
-    <button onclick="mostrarSeccion('capacitaciones')">Capacitaciones</button>
-    <button onclick="mostrarSeccion('diplomados')">Diplomados</button>
-  </nav>
-
-  <!-- Secciones -->
-  <div id="inicio" class="seccion">
-    <h2>Inicio</h2>
-    <p>Bienvenido, <span id="nombre-usuario"></span>!</p>
-  </div>
-
-  <div id="registro" class="seccion hidden">
-    <h2>Registro de Participantes</h2>
-    <p>Aquí podrás generar registros de participantes.</p>
-  </div>
-
-  <div id="capacitaciones" class="seccion hidden">
-    <h2>Capacitaciones</h2>
-    <p>Sección de capacitaciones (contenido pendiente).</p>
-  </div>
-
-  <div id="diplomados" class="seccion hidden">
-    <h2>Diplomados</h2>
-    <p>Sección de diplomados (contenido pendiente).</p>
-  </div>
-
-</div>
-
-  </section>
-
-  <!-- Sección de registro (oculta al inicio) -->
-  <section id="main-section" class="hidden">
-    <div class="form-box">
+    <div id="registro" class="seccion hidden">
       <h2>Registro de Participantes</h2>
-      <label>Nombre del participante</label>
-      <input type="text" id="nombre-participante" />
+      <input type="text" id="nombre-participante" placeholder="Nombre del participante">
+      <input type="text" id="nombre-capacitador" placeholder="Nombre del capacitador">
+      <button id="registrar-btn">Registrar</button>
 
-      <label>Nombre del capacitador</label>
-      <input type="text" id="nombre-capacitador" />
+      <div id="out">
+        <p>Participante: <span id="out-participante"></span></p>
+        <p>Capacitador: <span id="out-capacitador"></span></p>
+      </div>
 
-      <button id="registrar-btn">Generar Registro</button>
-    </div>
-
-    <div id="registro" class="hidden">
-      <h3>A C E - STPS</h3>
-      <p><strong>Participante:</strong> <span id="out-participante"></span></p>
-      <p><strong>Capacitador:</strong> <span id="out-capacitador"></span></p>
       <div id="qrcode"></div>
-      <a href="https://www.gob.mx/stps" target="_blank" class="link-stps">
-        Consultar registro en STPS
-      </a>
     </div>
-  </section>
 
-  <script src="script.js"></script>
+    <div id="capacitaciones" class="seccion hidden">
+      <h2>Capacitaciones</h2>
+      <p>Sección de capacitaciones (contenido pendiente).</p>
+    </div>
+
+    <div id="diplomados" class="seccion hidden">
+      <h2>Diplomados</h2>
+      <p>Sección de diplomados (contenido pendiente).</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SCRIPTS -->
+<script src="scripts.js"></script>
+
 </body>
 </html>
