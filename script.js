@@ -1,14 +1,12 @@
-// Lista de usuarios (ya incluidos para GitHub Pages, sin fetch)
+// Usuarios permitidos directamente (sin JSON ni fetch)
 let usuariosPermitidos = ["juan", "maria", "pedro"];
 
-// Función para mostrar sección
-function mostrarSeccion(seccionId) {
-  const secciones = document.querySelectorAll('.seccion');
-  secciones.forEach(sec => sec.classList.add('hidden'));
-  document.getElementById(seccionId).classList.remove('hidden');
+function mostrarSeccion(id) {
+  const secciones = document.querySelectorAll(".seccion");
+  secciones.forEach(s => s.classList.add("hidden"));
+  document.getElementById(id).classList.remove("hidden");
 }
 
-// Función al entrar usuario
 function entrarUsuario(username) {
   document.getElementById("login-section").classList.add("hidden");
   document.getElementById("main-section").classList.remove("hidden");
@@ -16,7 +14,6 @@ function entrarUsuario(username) {
   mostrarSeccion("inicio");
 }
 
-// Login
 document.getElementById("login-btn").addEventListener("click", () => {
   const username = document.getElementById("username").value.trim();
   const error = document.getElementById("login-error");
@@ -29,27 +26,28 @@ document.getElementById("login-btn").addEventListener("click", () => {
   }
 });
 
-// Registro de participantes
 document.getElementById("registrar-btn").addEventListener("click", () => {
   const participante = document.getElementById("nombre-participante").value.trim();
   const capacitador = document.getElementById("nombre-capacitador").value.trim();
 
-  if (participante === "" || capacitador === "") {
+  if (!participante || !capacitador) {
     alert("Por favor completa todos los campos.");
     return;
   }
 
   document.getElementById("out-participante").textContent = participante;
   document.getElementById("out-capacitador").textContent = capacitador;
+  document.querySelector(".resultados").classList.remove("hidden");
 
   const qrContainer = document.getElementById("qrcode");
   qrContainer.innerHTML = "";
   new QRCode(qrContainer, {
-    text: "https://www.gob.mx/stps",
+    text: `https://www.gob.mx/stps`,
     width: 128,
     height: 128,
     colorDark: "#0B3D91",
     colorLight: "#ffffff"
   });
 });
+
 
