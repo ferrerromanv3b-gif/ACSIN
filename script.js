@@ -1,20 +1,14 @@
-let usuariosPermitidos = [];
+// Lista de usuarios (ya incluidos para GitHub Pages, sin fetch)
+let usuariosPermitidos = ["juan", "maria", "pedro"];
 
-// Cargar usuarios desde JSON
-fetch("users.json")
-  .then(response => response.json())
-  .then(data => {
-    usuariosPermitidos = data.usuarios;
-  });
-
-// Función para mostrar sección específica
+// Función para mostrar sección
 function mostrarSeccion(seccionId) {
   const secciones = document.querySelectorAll('.seccion');
   secciones.forEach(sec => sec.classList.add('hidden'));
   document.getElementById(seccionId).classList.remove('hidden');
 }
 
-// Función para mostrar main-section después de login
+// Función al entrar usuario
 function entrarUsuario(username) {
   document.getElementById("login-section").classList.add("hidden");
   document.getElementById("main-section").classList.remove("hidden");
@@ -31,6 +25,7 @@ document.getElementById("login-btn").addEventListener("click", () => {
     entrarUsuario(username);
   } else {
     error.textContent = "Usuario no autorizado.";
+    error.classList.remove("hidden");
   }
 });
 
@@ -47,9 +42,6 @@ document.getElementById("registrar-btn").addEventListener("click", () => {
   document.getElementById("out-participante").textContent = participante;
   document.getElementById("out-capacitador").textContent = capacitador;
 
-  const registroDiv = document.getElementById("registro");
-  registroDiv.classList.remove("hidden");
-
   const qrContainer = document.getElementById("qrcode");
   qrContainer.innerHTML = "";
   new QRCode(qrContainer, {
@@ -60,3 +52,4 @@ document.getElementById("registrar-btn").addEventListener("click", () => {
     colorLight: "#ffffff"
   });
 });
+
