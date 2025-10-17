@@ -3,7 +3,7 @@ body {
   margin: 0;
   background: linear-gradient(135deg, #0B3D91, #E60000);
   color: #fff;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 header {
@@ -12,6 +12,7 @@ header {
   background-color: #fff;
   color: #0B3D91;
   padding: 10px 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .logo {
@@ -25,19 +26,20 @@ h1 {
   font-weight: 700;
 }
 
-section {
+/* CENTRADO DEL LOGIN */
+.centered {
   display: flex;
   justify-content: center;
   align-items: center;
   height: calc(100vh - 100px);
 }
 
-.login-box, .form-box {
-  background-color: rgba(255, 255, 255, 0.9);
+.login-box {
+  background-color: rgba(255,255,255,0.95);
   color: #0B3D91;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   width: 320px;
   text-align: center;
 }
@@ -73,18 +75,25 @@ button:hover {
   display: none;
 }
 
-/* Secciones y menú */
+/* CONTENIDO PRINCIPAL */
+#main-section {
+  padding: 20px;
+  text-align: center;
+}
+
 .menu {
   display: flex;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
 }
 
 .menu button {
-  padding: 8px 15px;
-  background-color: #0B3D91;
-  color: white;
+  background-color: #fff;
+  color: #0B3D91;
+  font-weight: 600;
   border: none;
+  padding: 8px 15px;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
@@ -92,13 +101,20 @@ button:hover {
 
 .menu button:hover {
   background-color: #E60000;
+  color: #fff;
 }
 
 .seccion {
   background-color: rgba(255,255,255,0.9);
   color: #0B3D91;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 25px;
+  border-radius: 15px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  margin-top: 10px;
+  max-width: 500px;
+  margin: 0 auto;
 }
+
+.resultados {
+  margin-top: 20px;
+}
+
