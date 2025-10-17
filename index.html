@@ -1,75 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Página</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal de Registro</title>
+  <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
 
-<header>
-  <img src="logo.png" alt="Logo" class="logo">
-  <h1>Mi Página</h1>
-</header>
-
-<section>
+  <header>
+    <img src="logo.png" alt="Logo" class="logo" />
+    <h1>Portal de Registro</h1>
+  </header>
 
   <!-- LOGIN -->
-  <div class="login-box" id="login-section">
-    <h2>Iniciar Sesión</h2>
-    <input type="text" id="username" placeholder="Usuario">
-    <button id="login-btn">Entrar</button>
-    <p class="error hidden" id="login-error"></p>
-  </div>
+  <section id="login-section" class="centered">
+    <div class="login-box">
+      <h2>Iniciar Sesión</h2>
+      <input type="text" id="username" placeholder="Usuario" />
+      <button id="login-btn">Entrar</button>
+      <p id="login-error" class="error hidden"></p>
+    </div>
+  </section>
 
   <!-- MAIN CONTENT -->
-  <div id="main-section" class="hidden">
-
-    <!-- Menú de navegación -->
+  <section id="main-section" class="hidden">
     <nav class="menu">
       <button onclick="mostrarSeccion('inicio')">Inicio</button>
-      <button onclick="mostrarSeccion('registro')">Registro de Participantes</button>
+      <button onclick="mostrarSeccion('registro')">Registro</button>
       <button onclick="mostrarSeccion('capacitaciones')">Capacitaciones</button>
       <button onclick="mostrarSeccion('diplomados')">Diplomados</button>
     </nav>
 
-    <!-- SECCIONES -->
-    <div id="inicio" class="seccion">
-      <h2>Inicio</h2>
-      <p>Bienvenido, <span id="nombre-usuario"></span>!</p>
-    </div>
-
-    <div id="registro" class="seccion hidden">
-      <h2>Registro de Participantes</h2>
-      <input type="text" id="nombre-participante" placeholder="Nombre del participante">
-      <input type="text" id="nombre-capacitador" placeholder="Nombre del capacitador">
-      <button id="registrar-btn">Registrar</button>
-
-      <div id="out">
-        <p>Participante: <span id="out-participante"></span></p>
-        <p>Capacitador: <span id="out-capacitador"></span></p>
+    <div class="contenido">
+      <div id="inicio" class="seccion">
+        <h2>Inicio</h2>
+        <p>Bienvenido, <span id="nombre-usuario"></span> 👋</p>
       </div>
 
-      <div id="qrcode"></div>
+      <div id="registro" class="seccion hidden">
+        <h2>Registro de Participantes</h2>
+        <input type="text" id="nombre-participante" placeholder="Nombre del participante" />
+        <input type="text" id="nombre-capacitador" placeholder="Nombre del capacitador" />
+        <button id="registrar-btn">Registrar</button>
+
+        <div id="out" class="resultados hidden">
+          <p><strong>Participante:</strong> <span id="out-participante"></span></p>
+          <p><strong>Capacitador:</strong> <span id="out-capacitador"></span></p>
+          <div id="qrcode"></div>
+        </div>
+      </div>
+
+      <div id="capacitaciones" class="seccion hidden">
+        <h2>Capacitaciones</h2>
+        <p>Sección de capacitaciones (contenido próximamente).</p>
+      </div>
+
+      <div id="diplomados" class="seccion hidden">
+        <h2>Diplomados</h2>
+        <p>Sección de diplomados (contenido próximamente).</p>
+      </div>
     </div>
+  </section>
 
-    <div id="capacitaciones" class="seccion hidden">
-      <h2>Capacitaciones</h2>
-      <p>Sección de capacitaciones (contenido pendiente).</p>
-    </div>
-
-    <div id="diplomados" class="seccion hidden">
-      <h2>Diplomados</h2>
-      <p>Sección de diplomados (contenido pendiente).</p>
-    </div>
-
-  </div>
-
-</section>
-
-<script src="scripts.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
